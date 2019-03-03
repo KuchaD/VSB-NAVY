@@ -1,0 +1,3 @@
+/home/davelinux/Dokumenty/GIT/VSB-NAVY/Percepton/cmake-build-debug/CMakeFiles/rebuild_cache.dir
+/home/davelinux/Dokumenty/GIT/VSB-NAVY/Percepton/cmake-build-debug/CMakeFiles/Percepton.dir
+/home/davelinux/Dokumenty/GIT/VSB-NAVY/Percepton/cmake-build-debug/CMakeFiles/edit_cache.dir
