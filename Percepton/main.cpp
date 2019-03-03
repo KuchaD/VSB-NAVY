@@ -55,7 +55,31 @@ int main() {
 
     Neuron lN ;
     lN.Train(TrainSet,result);
-    std::cout << lN.Predict({0,5});
+
+
+    std::random_device rde;  //Will be used to obtain a seed for the random number engine
+    std::mt19937 gene(rde()); //Standard mersenne_twister_engine seeded with rd()
+    std::uniform_int_distribution<> dise(150, 450);
+    std::vector<std::vector<double>> TestSet;
+    std::vector<double> resultTest;
+
+    for(int i = 0;i < 150;i+=1) {
+
+        std::vector<double> vector = {(double)dise(gene),(double)dise(gene)};
+        TestSet.push_back(vector);
+        if(2*vector.at(0)-1 <= vector.at(1)) {
+
+            resultTest.push_back(1);
+        }
+        else
+        {
+            resultTest.push_back(-1);
+        }
+        }
+
+    auto e = lN.Test(TestSet,resultTest);
+    std::cout << "Test :" << TestSet.size() << " Error: " << e << " Uspesnost: " << 100 - (double)(100.0/(double)TestSet.size())*e << " %";
+    //std::cout << lN.Predict({0,5});
 std::cout.flush();
 
 
@@ -111,6 +135,7 @@ std::cout.flush();
 
     // Output the chart
     c->makeChart("linefill.png");
+
 
     //free up resources
     delete c;

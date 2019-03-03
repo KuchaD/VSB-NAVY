@@ -46,7 +46,7 @@ int Neuron::Train(std::vector<std::vector<double>> Input,std::vector<double> Out
     std::default_random_engine re;
 
 
-    for (int i = 0; i < Input.at(0).size(); i++) // X[0].size() + 1 -> I am using +1 to add the bias term
+    for (int i = 0; i < Input.at(0).size(); i++)
     {
         Weight.push_back(unif(re));
     }
@@ -67,4 +67,19 @@ int Neuron::Train(std::vector<std::vector<double>> Input,std::vector<double> Out
         }
         m_errors.push_back(errors);
     }
+
+
+}
+
+int Neuron::Test(std::vector<std::vector<double>> Input, std::vector<double> Output) {
+
+        int errors = 0;
+
+        for (int j = 0; j < Input.size(); j++)
+        {
+            float update = eLearn * (Output.at(j) - Predict(Input.at(j)) );
+
+            errors += update != 0 ? 1 : 0;
+        }
+    return  errors;
 }

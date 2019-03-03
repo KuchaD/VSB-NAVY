@@ -23,6 +23,8 @@ public:
      int Predict(std::vector<double> Input);
      int Train(std::vector<std::vector<double>> Input,std::vector<double> Output);
 
+    int Test(std::vector<std::vector<double>> Input,std::vector<double> Output);
+
 
 
 };
