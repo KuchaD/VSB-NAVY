@@ -4,7 +4,7 @@ project(Percepton)
 set(CMAKE_CXX_STANDARD 17)
 
 
-add_executable(Percepton main.cpp NeuralNet/Neuron.cpp NeuralNet/Neuron.h BackPropagation/Neuron.cpp BackPropagation/Neuron.h BackPropagation/NeuronLayer.cpp BackPropagation/NeuronLayer.h BackPropagation/NeuralNetwork.cpp BackPropagation/NeuralNetwork.h)
+add_executable(Percepton main.cpp NeuralNet/Neuron.cpp NeuralNet/Neuron.h  BackPropagation/Neuron.cpp BackPropagation/Neuron.h BackPropagation/NeuronLayer.cpp BackPropagation/NeuronLayer.h BackPropagation/NeuralNetwork.cpp BackPropagation/NeuralNetwork.h)
 
 find_package( OpenCV REQUIRED )
 target_link_libraries(Percepton ${OpenCV_LIBS} )

@@ -13,7 +13,7 @@ private:
     int _num_inputs;
     NeuronLayer* _hiddenLayer;
     NeuronLayer* _outputLayer;
-    double RateLearning = 0.01;
+    double RateLearning = 0.1;
 public:
     NeuralNetwork(int num_input,int num_hidden,int num_output,double hiddenLayer_bias = -1,double outputLayer_bias = -1);
     void int_weight_input_hidden();

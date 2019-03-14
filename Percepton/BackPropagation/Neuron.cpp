@@ -15,7 +15,7 @@ Neuron::Neuron() {
 
     std::random_device dev;
     std::mt19937 rng(dev());
-    std::uniform_real_distribution<double> gen(0,1);
+    std::normal_distribution<double>  gen(0,1);
 
     _bias = gen(rng);
 }
@@ -74,7 +74,7 @@ double Neuron::getOutput() {
     return _output;
 }
 
-std::vector<double> Neuron::getWeight() {
+std::vector<double>& Neuron::getWeight() {
     return _weight;
 }
 
@@ -101,3 +101,7 @@ void Neuron::UpdateWeight() {
 
 }
 
+void Neuron::setWeight(int index, double aW) {
+    if(_weight.size() > index)
+        _weight[index] = aW;
+}

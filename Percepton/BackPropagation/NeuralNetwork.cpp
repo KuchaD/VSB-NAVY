@@ -19,7 +19,7 @@ void NeuralNetwork::int_weight_input_hidden() {
 
     std::random_device device;
     std::mt19937 rng(device());
-    std::uniform_real_distribution<double> gen(0,1);
+    std::uniform_real_distribution<double> gen(0,0.1);
 
     for(auto nNeuron : _hiddenLayer->getNeuron())
     {
@@ -35,7 +35,8 @@ void NeuralNetwork::int_weight_input_hidden() {
 void NeuralNetwork::int_weight_hidden_output() {
     std::random_device device;
     std::mt19937 rng(device());
-    std::uniform_real_distribution<double> gen(0.1);
+
+    std::uniform_real_distribution<double> gen(0,0.1);
 
     for(auto nNeuron : _outputLayer->getNeuron())
     {
@@ -75,8 +76,44 @@ void NeuralNetwork::Train(std::vector<double> inputs, std::vector<double> output
 
     feed_forward(inputs);
 
+    auto lOutputsNeuron = _outputLayer->getNeuron();
+    for (int i = 0; i < lOutputsNeuron.size() ; ++i) {
+        lOutputsNeuron[i]->SetError(lOutputsNeuron[i]->Calculate_pd_output() * lOutputsNeuron[i]->Cal_pd_ErrorOutput(outputs[i]));
+    }
+
+    auto lHiddenNeurons = _hiddenLayer->getNeuron();
+    for (int j = 0; j < lHiddenNeurons.size() ; ++j) {
+        double d_error = 0;
+        for (int i = 0; i < lOutputsNeuron.size() ; ++i) {
+            d_error += lOutputsNeuron[i]->getError() * lOutputsNeuron[i]->getWeight()[j];
+        }
+
+        lHiddenNeurons[j]->SetError(d_error * lHiddenNeurons[j]->Calculate_pd_output());
+
+    }
+
+    for (int k = 0; k < lOutputsNeuron.size() ; ++k) {
+        auto lOutputWeights = lOutputsNeuron[k]->getWeight();
+
+        for (int i = 0; i < lOutputWeights.size() ; ++i) {
+            double lNew_Weight = lOutputsNeuron[k]->getError() * lOutputsNeuron[k]->calculate_pd_weight(i);
+            lOutputsNeuron[k]->setWeight(i,lOutputWeights[i] - RateLearning * lNew_Weight);
+
+        }
+        lOutputsNeuron[k]->_bias -= lOutputsNeuron[k]->getError() * RateLearning;
+    }
 
 
+    for (int k = 0; k < lHiddenNeurons.size() ; ++k) {
+        auto lHiddenWeights = lHiddenNeurons[k]->getWeight();
+
+        for (int i = 0; i < lHiddenWeights.size() ; ++i) {
+            double lNew_Weight = lHiddenNeurons[k]->getError() * lHiddenNeurons[k]->calculate_pd_weight(i);
+            lHiddenNeurons[k]->setWeight(i,lHiddenWeights[i] - RateLearning * lNew_Weight);
+        }
+
+        lHiddenNeurons[k]->_bias -= lHiddenNeurons[k]->getError() * RateLearning;
+    }
 
 
 

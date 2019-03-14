@@ -12,7 +12,6 @@
 
 using namespace std;
 
-
 void cv1()
 {
 
@@ -132,25 +131,28 @@ void cv2() {
                                                      {0, 1},
                                                      {1, 0},
                                                      {1, 1}};
-    std::vector<std::vector<double>> R = {{0,1},
-                                          {1,0},
-                                          {1,0},
-                                          {0,1}};
+    std::vector<std::vector<double>> R = {{0},
+                                          {1},
+                                          {1},
+                                          {0}};
 
 
-    NeuralNetwork nn = NeuralNetwork(2, 4, 1);
+    NeuralNetwork nn = NeuralNetwork(2, 2, 1);
 
-    for (int i = 0; i < 10000; ++i) {
-
-        auto input = training_set[i %4];
-        auto output = R[i%4];
-
-        nn.Train(input, output);
-        //cout << nn.Calculate_Error(input,output);
+    for (int i = 0; i < 1000000; ++i) {
+        for (int j = 0; j < 4; ++j) {
 
 
-       // cout << nn;
+            auto input = training_set[j];
+            auto output = R[j];
 
+            nn.Train(input, output);
+            //cout << nn.Calculate_Error(input,output);
+
+
+           // cout << nn;
+
+        }
         for(auto nItem : nn.feed_forward({0,0}))
         {
             cout << "0 0 = " << nItem << " " << std::endl;
@@ -165,16 +167,17 @@ void cv2() {
             cout << "1 0 = " << nItem << " " << std::endl;
         };
 
-        for(auto nItem : nn.feed_forward({1,1}))
-        {
+        for(auto nItem : nn.feed_forward({1,1})) {
             cout << "1 1 = " << nItem << " " << std::endl;
-        };
+
+        }
     }
 
-    cout << nn;
+    };
 
 
-}
+
+
 int main() {
 
     cv2();

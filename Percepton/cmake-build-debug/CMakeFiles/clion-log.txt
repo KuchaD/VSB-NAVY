@@ -1,5 +1,4 @@
 /snap/clion/61/bin/cmake/linux/bin/cmake -DCMAKE_BUILD_TYPE=Debug -G "CodeBlocks - Unix Makefiles" /home/daveliinux/GIT/VSB-NAVY/Percepton
--- Found OpenCV: /usr/local (found version "3.4.4") 
 LIBRARIES = /home/daveliinux/GIT/VSB-NAVY/ChartDirector/lib/libchartdir.so
 -- Configuring done
 -- Generating done

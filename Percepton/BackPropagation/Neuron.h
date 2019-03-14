@@ -33,7 +33,8 @@ public:
     double calculate_Error_Net(double targetOutput);
 
     double getOutput();
-    std::vector<double> getWeight();
+    void setWeight(int index,double aW);
+    std::vector<double>& getWeight();
     void AddWeight(double Weight);
 };
 
