@@ -7,34 +7,14 @@
 #include <chartdir.h>
 #include <random>
 #include "NeuralNet/Neuron.h"
+#include "BackPropagation/NeuralNetwork.h"
 
 
 using namespace std;
-void PrintGraf(cv::Mat &Dest, std::vector<std::vector<double>> X,  std::vector<double> p)
+
+
+void cv1()
 {
-    Dest = cv::Mat(1000,1000,CV_8UC3,cv::Scalar(255, 255, 255));
-
-
-    int Yp = 2*200+1;
-    int Yp2 = 2* 200+1;
-
-
-
-    cv::line(Dest,cv::Point(200 + 500,Yp2+500),cv::Point(-200-500,Yp-500),cv::Scalar(255,0,0));
-
-
-
-
-/*
-    for(int i=0; i < X.size();i++)
-    {
-        auto Point = cvPoint(X.at(i)[0],X.at(i)[1]);
-        cvDrawRect(&Dest,Point,cvPoint(Point.x+1,Point.y+1),&cvScale(0,0,0));
-    }
-*/
-}
-
-int main() {
 
     std::vector<std::vector<double>> TrainSet;
     std::vector<double> result;
@@ -47,9 +27,9 @@ int main() {
                 result.push_back(1);
             }
             else
-                {
-                    result.push_back(-1);
-                }
+            {
+                result.push_back(-1);
+            }
         }
     }
 
@@ -75,12 +55,12 @@ int main() {
         {
             resultTest.push_back(-1);
         }
-        }
+    }
 
     auto e = lN.Test(TestSet,resultTest);
     std::cout << "Test :" << TestSet.size() << " Error: " << e << " Uspesnost: " << 100 - (double)(100.0/(double)TestSet.size())*e << " %";
     //std::cout << lN.Predict({0,5});
-std::cout.flush();
+    std::cout.flush();
 
 
 
@@ -120,29 +100,85 @@ std::cout.flush();
 
     for(int i = 0;i < 150;i+=1) {
 
-            double x[] = {(double) dis(gen)};
-            double y[] = {(double) dis(gen)};
-            double r[] = {(double) lN.Predict({x[0], y[0]})};
-            // Add an orange (0xff9933) scatter chart layer, using 13 pixel diamonds as symbols
+        double x[] = {(double) dis(gen)};
+        double y[] = {(double) dis(gen)};
+        double r[] = {(double) lN.Predict({x[0], y[0]})};
+        // Add an orange (0xff9933) scatter chart layer, using 13 pixel diamonds as symbols
 
-            c->addScatterLayer(DoubleArray(x, (int) (sizeof(double)/sizeof(double))), DoubleArray(
-                    y, (int) ((sizeof(double)/sizeof(double)))), "",
-                               Chart::DiamondSymbol, 5, (r[0] == 1) ? 0xff9933 : 0x33ff33);
+        c->addScatterLayer(DoubleArray(x, (int) (sizeof(double)/sizeof(double))), DoubleArray(
+                y, (int) ((sizeof(double)/sizeof(double)))), "",
+                           Chart::DiamondSymbol, 5, (r[0] == 1) ? 0xff9933 : 0x33ff33);
 
-        }
+    }
 
 
 
     // Output the chart
     c->makeChart("linefill.png");
-
-
-    //free up resources
-    delete c;
     cv::Mat s = cv::imread("linefill.png",cv::IMREAD_ANYCOLOR);
     cv::namedWindow("tet", 0);
     cv::imshow("tet",s);
     cv::waitKey(0);
+
+    //free up resources
+    delete c;
+
+
+}
+
+void cv2() {
+
+    std::vector<std::vector<double>> training_set = {{0, 0},
+                                                     {0, 1},
+                                                     {1, 0},
+                                                     {1, 1}};
+    std::vector<std::vector<double>> R = {{0,1},
+                                          {1,0},
+                                          {1,0},
+                                          {0,1}};
+
+
+    NeuralNetwork nn = NeuralNetwork(2, 4, 1);
+
+    for (int i = 0; i < 10000; ++i) {
+
+        auto input = training_set[i %4];
+        auto output = R[i%4];
+
+        nn.Train(input, output);
+        //cout << nn.Calculate_Error(input,output);
+
+
+       // cout << nn;
+
+        for(auto nItem : nn.feed_forward({0,0}))
+        {
+            cout << "0 0 = " << nItem << " " << std::endl;
+        };
+
+        for(auto nItem : nn.feed_forward({0,1}))
+        {
+            cout << "0 1 = " << nItem << " " << std::endl;
+        };
+        for(auto nItem : nn.feed_forward({1,0}))
+        {
+            cout << "1 0 = " << nItem << " " << std::endl;
+        };
+
+        for(auto nItem : nn.feed_forward({1,1}))
+        {
+            cout << "1 1 = " << nItem << " " << std::endl;
+        };
+    }
+
+    cout << nn;
+
+
+}
+int main() {
+
+    cv2();
+
     //free up resources    delete c;
     return 0;
 

@@ -39,19 +39,19 @@ cmake_force:
 SHELL = /bin/sh
 
 # The CMake executable.
-CMAKE_COMMAND = /home/davelinux/.local/share/JetBrains/Toolbox/apps/CLion/ch-0/183.5429.37/bin/cmake/linux/bin/cmake
+CMAKE_COMMAND = /snap/clion/61/bin/cmake/linux/bin/cmake
 
 # The command to remove a file.
-RM = /home/davelinux/.local/share/JetBrains/Toolbox/apps/CLion/ch-0/183.5429.37/bin/cmake/linux/bin/cmake -E remove -f
+RM = /snap/clion/61/bin/cmake/linux/bin/cmake -E remove -f
 
 # Escaping for special characters.
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/davelinux/Dokumenty/GIT/VSB-NAVY/Percepton
+CMAKE_SOURCE_DIR = /home/daveliinux/GIT/VSB-NAVY/Percepton
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/davelinux/Dokumenty/GIT/VSB-NAVY/Percepton/cmake-build-debug
+CMAKE_BINARY_DIR = /home/daveliinux/GIT/VSB-NAVY/Percepton/cmake-build-debug
 
 #=============================================================================
 # Targets provided globally by CMake.
@@ -59,7 +59,7 @@ CMAKE_BINARY_DIR = /home/davelinux/Dokumenty/GIT/VSB-NAVY/Percepton/cmake-build-
 # Special rule for the target rebuild_cache
 rebuild_cache:
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Running CMake to regenerate build system..."
-	/home/davelinux/.local/share/JetBrains/Toolbox/apps/CLion/ch-0/183.5429.37/bin/cmake/linux/bin/cmake -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR)
+	/snap/clion/61/bin/cmake/linux/bin/cmake -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR)
 .PHONY : rebuild_cache
 
 # Special rule for the target rebuild_cache
@@ -70,7 +70,7 @@ rebuild_cache/fast: rebuild_cache
 # Special rule for the target edit_cache
 edit_cache:
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "No interactive CMake dialog available..."
-	/home/davelinux/.local/share/JetBrains/Toolbox/apps/CLion/ch-0/183.5429.37/bin/cmake/linux/bin/cmake -E echo No\ interactive\ CMake\ dialog\ available.
+	/snap/clion/61/bin/cmake/linux/bin/cmake -E echo No\ interactive\ CMake\ dialog\ available.
 .PHONY : edit_cache
 
 # Special rule for the target edit_cache
@@ -80,9 +80,9 @@ edit_cache/fast: edit_cache
 
 # The main all target
 all: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/davelinux/Dokumenty/GIT/VSB-NAVY/Percepton/cmake-build-debug/CMakeFiles /home/davelinux/Dokumenty/GIT/VSB-NAVY/Percepton/cmake-build-debug/CMakeFiles/progress.marks
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/daveliinux/GIT/VSB-NAVY/Percepton/cmake-build-debug/CMakeFiles /home/daveliinux/GIT/VSB-NAVY/Percepton/cmake-build-debug/CMakeFiles/progress.marks
 	$(MAKE) -f CMakeFiles/Makefile2 all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/davelinux/Dokumenty/GIT/VSB-NAVY/Percepton/cmake-build-debug/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/daveliinux/GIT/VSB-NAVY/Percepton/cmake-build-debug/CMakeFiles 0
 .PHONY : all
 
 # The main clean target
@@ -122,6 +122,87 @@ Percepton: cmake_check_build_system
 Percepton/fast:
 	$(MAKE) -f CMakeFiles/Percepton.dir/build.make CMakeFiles/Percepton.dir/build
 .PHONY : Percepton/fast
+
+BackPropagation/NeuralNetwork.o: BackPropagation/NeuralNetwork.cpp.o
+
+.PHONY : BackPropagation/NeuralNetwork.o
+
+# target to build an object file
+BackPropagation/NeuralNetwork.cpp.o:
+	$(MAKE) -f CMakeFiles/Percepton.dir/build.make CMakeFiles/Percepton.dir/BackPropagation/NeuralNetwork.cpp.o
+.PHONY : BackPropagation/NeuralNetwork.cpp.o
+
+BackPropagation/NeuralNetwork.i: BackPropagation/NeuralNetwork.cpp.i
+
+.PHONY : BackPropagation/NeuralNetwork.i
+
+# target to preprocess a source file
+BackPropagation/NeuralNetwork.cpp.i:
+	$(MAKE) -f CMakeFiles/Percepton.dir/build.make CMakeFiles/Percepton.dir/BackPropagation/NeuralNetwork.cpp.i
+.PHONY : BackPropagation/NeuralNetwork.cpp.i
+
+BackPropagation/NeuralNetwork.s: BackPropagation/NeuralNetwork.cpp.s
+
+.PHONY : BackPropagation/NeuralNetwork.s
+
+# target to generate assembly for a file
+BackPropagation/NeuralNetwork.cpp.s:
+	$(MAKE) -f CMakeFiles/Percepton.dir/build.make CMakeFiles/Percepton.dir/BackPropagation/NeuralNetwork.cpp.s
+.PHONY : BackPropagation/NeuralNetwork.cpp.s
+
+BackPropagation/Neuron.o: BackPropagation/Neuron.cpp.o
+
+.PHONY : BackPropagation/Neuron.o
+
+# target to build an object file
+BackPropagation/Neuron.cpp.o:
+	$(MAKE) -f CMakeFiles/Percepton.dir/build.make CMakeFiles/Percepton.dir/BackPropagation/Neuron.cpp.o
+.PHONY : BackPropagation/Neuron.cpp.o
+
+BackPropagation/Neuron.i: BackPropagation/Neuron.cpp.i
+
+.PHONY : BackPropagation/Neuron.i
+
+# target to preprocess a source file
+BackPropagation/Neuron.cpp.i:
+	$(MAKE) -f CMakeFiles/Percepton.dir/build.make CMakeFiles/Percepton.dir/BackPropagation/Neuron.cpp.i
+.PHONY : BackPropagation/Neuron.cpp.i
+
+BackPropagation/Neuron.s: BackPropagation/Neuron.cpp.s
+
+.PHONY : BackPropagation/Neuron.s
+
+# target to generate assembly for a file
+BackPropagation/Neuron.cpp.s:
+	$(MAKE) -f CMakeFiles/Percepton.dir/build.make CMakeFiles/Percepton.dir/BackPropagation/Neuron.cpp.s
+.PHONY : BackPropagation/Neuron.cpp.s
+
+BackPropagation/NeuronLayer.o: BackPropagation/NeuronLayer.cpp.o
+
+.PHONY : BackPropagation/NeuronLayer.o
+
+# target to build an object file
+BackPropagation/NeuronLayer.cpp.o:
+	$(MAKE) -f CMakeFiles/Percepton.dir/build.make CMakeFiles/Percepton.dir/BackPropagation/NeuronLayer.cpp.o
+.PHONY : BackPropagation/NeuronLayer.cpp.o
+
+BackPropagation/NeuronLayer.i: BackPropagation/NeuronLayer.cpp.i
+
+.PHONY : BackPropagation/NeuronLayer.i
+
+# target to preprocess a source file
+BackPropagation/NeuronLayer.cpp.i:
+	$(MAKE) -f CMakeFiles/Percepton.dir/build.make CMakeFiles/Percepton.dir/BackPropagation/NeuronLayer.cpp.i
+.PHONY : BackPropagation/NeuronLayer.cpp.i
+
+BackPropagation/NeuronLayer.s: BackPropagation/NeuronLayer.cpp.s
+
+.PHONY : BackPropagation/NeuronLayer.s
+
+# target to generate assembly for a file
+BackPropagation/NeuronLayer.cpp.s:
+	$(MAKE) -f CMakeFiles/Percepton.dir/build.make CMakeFiles/Percepton.dir/BackPropagation/NeuronLayer.cpp.s
+.PHONY : BackPropagation/NeuronLayer.cpp.s
 
 NeuralNet/Neuron.o: NeuralNet/Neuron.cpp.o
 
@@ -186,6 +267,15 @@ help:
 	@echo "... rebuild_cache"
 	@echo "... Percepton"
 	@echo "... edit_cache"
+	@echo "... BackPropagation/NeuralNetwork.o"
+	@echo "... BackPropagation/NeuralNetwork.i"
+	@echo "... BackPropagation/NeuralNetwork.s"
+	@echo "... BackPropagation/Neuron.o"
+	@echo "... BackPropagation/Neuron.i"
+	@echo "... BackPropagation/Neuron.s"
+	@echo "... BackPropagation/NeuronLayer.o"
+	@echo "... BackPropagation/NeuronLayer.i"
+	@echo "... BackPropagation/NeuronLayer.s"
 	@echo "... NeuralNet/Neuron.o"
 	@echo "... NeuralNet/Neuron.i"
 	@echo "... NeuralNet/Neuron.s"

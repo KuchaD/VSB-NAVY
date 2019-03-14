@@ -1,6 +1,9 @@
 file(REMOVE_RECURSE
   "CMakeFiles/Percepton.dir/main.cpp.o"
   "CMakeFiles/Percepton.dir/NeuralNet/Neuron.cpp.o"
+  "CMakeFiles/Percepton.dir/BackPropagation/Neuron.cpp.o"
+  "CMakeFiles/Percepton.dir/BackPropagation/NeuronLayer.cpp.o"
+  "CMakeFiles/Percepton.dir/BackPropagation/NeuralNetwork.cpp.o"
   "Percepton.pdb"
   "Percepton"
 )

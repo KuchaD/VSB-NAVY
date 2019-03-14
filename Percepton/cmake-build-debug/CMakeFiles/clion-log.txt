@@ -1,5 +1,6 @@
-/home/davelinux/.local/share/JetBrains/Toolbox/apps/CLion/ch-0/183.5429.37/bin/cmake/linux/bin/cmake -DCMAKE_BUILD_TYPE=Debug -G "CodeBlocks - Unix Makefiles" /home/davelinux/Dokumenty/GIT/VSB-NAVY/Percepton
-LIBRARIES = /home/davelinux/Stažené/ChartDirector/lib/libchartdir.so
+/snap/clion/61/bin/cmake/linux/bin/cmake -DCMAKE_BUILD_TYPE=Debug -G "CodeBlocks - Unix Makefiles" /home/daveliinux/GIT/VSB-NAVY/Percepton
+-- Found OpenCV: /usr/local (found version "3.4.4") 
+LIBRARIES = /home/daveliinux/GIT/VSB-NAVY/ChartDirector/lib/libchartdir.so
 -- Configuring done
 -- Generating done
--- Build files have been written to: /home/davelinux/Dokumenty/GIT/VSB-NAVY/Percepton/cmake-build-debug
+-- Build files have been written to: /home/daveliinux/GIT/VSB-NAVY/Percepton/cmake-build-debug
