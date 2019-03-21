@@ -1,3 +1,6 @@
 /home/daveliinux/GIT/VSB-NAVY/Percepton/cmake-build-debug/CMakeFiles/rebuild_cache.dir
 /home/daveliinux/GIT/VSB-NAVY/Percepton/cmake-build-debug/CMakeFiles/Percepton.dir
 /home/daveliinux/GIT/VSB-NAVY/Percepton/cmake-build-debug/CMakeFiles/edit_cache.dir
+/home/daveliinux/GIT/VSB-NAVY/Percepton/cmake-build-debug/dlib_build/CMakeFiles/rebuild_cache.dir
+/home/daveliinux/GIT/VSB-NAVY/Percepton/cmake-build-debug/dlib_build/CMakeFiles/dlib.dir
+/home/daveliinux/GIT/VSB-NAVY/Percepton/cmake-build-debug/dlib_build/CMakeFiles/edit_cache.dir

@@ -146,6 +146,7 @@ Percepton: /usr/local/lib/libopencv_shape.so.3.4.4
 Percepton: /usr/local/lib/libopencv_stitching.so.3.4.4
 Percepton: /usr/local/lib/libopencv_superres.so.3.4.4
 Percepton: /usr/local/lib/libopencv_videostab.so.3.4.4
+Percepton: dlib_build/libdlib.a
 Percepton: /home/daveliinux/GIT/VSB-NAVY/ChartDirector/lib/libchartdir.so
 Percepton: /usr/local/lib/libopencv_calib3d.so.3.4.4
 Percepton: /usr/local/lib/libopencv_features2d.so.3.4.4
@@ -157,6 +158,17 @@ Percepton: /usr/local/lib/libopencv_videoio.so.3.4.4
 Percepton: /usr/local/lib/libopencv_imgcodecs.so.3.4.4
 Percepton: /usr/local/lib/libopencv_imgproc.so.3.4.4
 Percepton: /usr/local/lib/libopencv_core.so.3.4.4
+Percepton: /usr/lib/x86_64-linux-gnu/libnsl.so
+Percepton: /usr/lib/x86_64-linux-gnu/libSM.so
+Percepton: /usr/lib/x86_64-linux-gnu/libICE.so
+Percepton: /usr/lib/x86_64-linux-gnu/libX11.so
+Percepton: /usr/lib/x86_64-linux-gnu/libXext.so
+Percepton: /usr/lib/x86_64-linux-gnu/libpng.so
+Percepton: /usr/lib/x86_64-linux-gnu/libz.so
+Percepton: /usr/lib/x86_64-linux-gnu/libjpeg.so
+Percepton: /usr/lib/x86_64-linux-gnu/libcblas.so
+Percepton: /usr/lib/x86_64-linux-gnu/liblapack.so
+Percepton: /usr/lib/x86_64-linux-gnu/libsqlite3.so
 Percepton: CMakeFiles/Percepton.dir/link.txt
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/daveliinux/GIT/VSB-NAVY/Percepton/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Linking CXX executable Percepton"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/Percepton.dir/link.txt --verbose=$(VERBOSE)

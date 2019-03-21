@@ -1,4 +1,13 @@
 /snap/clion/61/bin/cmake/linux/bin/cmake -DCMAKE_BUILD_TYPE=Debug -G "CodeBlocks - Unix Makefiles" /home/daveliinux/GIT/VSB-NAVY/Percepton
+-- Using CMake version: 3.13.2
+-- Compiling dlib version: 19.16.99
+-- Searching for BLAS and LAPACK
+-- Searching for BLAS and LAPACK
+-- Checking for module 'cblas'
+--   No package 'cblas' found
+-- Found OpenBLAS library
+-- Found LAPACK library
+-- C++11 activated.
 LIBRARIES = /home/daveliinux/GIT/VSB-NAVY/ChartDirector/lib/libchartdir.so
 -- Configuring done
 -- Generating done

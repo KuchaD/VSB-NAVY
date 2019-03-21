@@ -9,8 +9,12 @@
 #include "NeuralNet/Neuron.h"
 #include "BackPropagation/NeuralNetwork.h"
 
+#include <opencv2/opencv.hpp>
+#include <dlib/mlp.h>
+using namespace dlib;
 
 using namespace std;
+
 
 void cv1()
 {
@@ -173,17 +177,78 @@ void cv2() {
         }
     }
 
-    };
+}
 
 
 
+void cv4()
+{
 
+}
 int main() {
 
-    cv2();
+    // The mlp takes column vectors as input and gives column vectors as output.  The dlib::matrix
+    // object is used to represent the column vectors. So the first thing we do here is declare
+    // a convenient typedef for the matrix object we will be using.
 
-    //free up resources    delete c;
-    return 0;
+    // This typedef declares a matrix with 2 rows and 1 column.  It will be the
+    // object that contains each of our 2 dimensional samples.   (Note that if you wanted
+    // more than 2 features in this vector you can simply change the 2 to something else)
+    typedef matrix<double, 2, 1> sample_type;
 
 
+    // make an instance of a sample matrix so we can use it below
+    sample_type sample;
+
+    // Create a multi-layer perceptron network.   This network has 2 nodes on the input layer
+    // (which means it takes column vectors of length 2 as input) and 5 nodes in the first
+    // hidden layer.  Note that the other 4 variables in the mlp's constructor are left at
+    // their default values.
+    mlp::kernel_1a_c net(2,10);
+
+    // Now let's put some data into our sample and train on it.  We do this
+    // by looping over 41*41 points and labeling them according to their
+    // distance from the origin.
+
+
+
+    std::vector<sample_type> lsample;
+    std::vector<double> lResult;
+
+    for (int i = 0; i < 100; ++i) {
+
+        for (double r = 2.4; r < 4.0; r += 0.1) {
+            double lLastResult = 0.1;
+
+            for (int c = 0; c < 100; ++c) {
+
+                double lRx = r * lLastResult * (1 - lLastResult);
+
+                sample_type lS;
+                lS(0) = r;
+                lS(1) = lLastResult;
+
+                net.train(lS, lRx);
+
+                lLastResult = lRx;
+
+
+            }
+        }
+    }
+
+
+
+    // Now we have trained our mlp.  Let's see how well it did.
+    // Note that if you run this program multiple times you will get different results. This
+    // is because the mlp network is randomly initialized.
+
+    // each of these statements prints out the output of the network given a particular sample.
+
+    sample(0) = 2.5; //r
+    sample(1) = 0.6; //value
+    cout << "This sample should be close to 1 and it is classified as a " << net(sample) << endl;
+
+
+    return 1;
 }

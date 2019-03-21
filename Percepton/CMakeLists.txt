@@ -9,6 +9,8 @@ add_executable(Percepton main.cpp NeuralNet/Neuron.cpp NeuralNet/Neuron.h  BackP
 find_package( OpenCV REQUIRED )
 target_link_libraries(Percepton ${OpenCV_LIBS} )
 
+add_subdirectory(../dlib dlib_build)
+
 
 INCLUDE_DIRECTORIES(  /home/daveliinux/GIT/VSB-NAVY/ChartDirector/include)
 LINK_DIRECTORIES(  /home/daveliinux/GIT/VSB-NAVY/ChartDirector/lib/ )
@@ -17,4 +19,5 @@ LINK_DIRECTORIES(  /home/daveliinux/GIT/VSB-NAVY/ChartDirector/lib/ )
 file(GLOB LIBRARIES "/home/daveliinux/GIT/VSB-NAVY/ChartDirector/lib/*.so")
 message("LIBRARIES = ${LIBRARIES}")
 
+target_link_libraries(Percepton dlib::dlib)
 TARGET_LINK_LIBRARIES(Percepton  ${LIBRARIES})

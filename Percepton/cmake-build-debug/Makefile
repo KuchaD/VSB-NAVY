@@ -123,6 +123,19 @@ Percepton/fast:
 	$(MAKE) -f CMakeFiles/Percepton.dir/build.make CMakeFiles/Percepton.dir/build
 .PHONY : Percepton/fast
 
+#=============================================================================
+# Target rules for targets named dlib
+
+# Build rule for target.
+dlib: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 dlib
+.PHONY : dlib
+
+# fast build rule for target.
+dlib/fast:
+	$(MAKE) -f dlib_build/CMakeFiles/dlib.dir/build.make dlib_build/CMakeFiles/dlib.dir/build
+.PHONY : dlib/fast
+
 BackPropagation/NeuralNetwork.o: BackPropagation/NeuralNetwork.cpp.o
 
 .PHONY : BackPropagation/NeuralNetwork.o
@@ -267,6 +280,7 @@ help:
 	@echo "... rebuild_cache"
 	@echo "... Percepton"
 	@echo "... edit_cache"
+	@echo "... dlib"
 	@echo "... BackPropagation/NeuralNetwork.o"
 	@echo "... BackPropagation/NeuralNetwork.i"
 	@echo "... BackPropagation/NeuralNetwork.s"

@@ -15,12 +15,14 @@ set(CMAKE_CXX_COMPILER_ID "GNU")
 # The include file search paths:
 set(CMAKE_CXX_TARGET_INCLUDE_PATH
   "/home/daveliinux/GIT/VSB-NAVY/ChartDirector/include"
+  "/home/daveliinux/GIT/VSB-NAVY/dlib/.."
   "/usr/local/include"
   "/usr/local/include/opencv"
   )
 
 # Targets to which this target links.
 set(CMAKE_TARGET_LINKED_INFO_FILES
+  "/home/daveliinux/GIT/VSB-NAVY/Percepton/cmake-build-debug/dlib_build/CMakeFiles/dlib.dir/DependInfo.cmake"
   )
 
 # Fortran module output directory.
